@@ -9,7 +9,47 @@
   border-bottom: var(--glass-border);
   padding: 1.25rem 2rem;
   display: flex;
-  justify-content: center; /* Center the nav if no logo is present */
+  justify-content: center;
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 1001; /* Above the mobile nav */
+}
+
+.menu-icon span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--text-primary);
+  border-radius: 3px;
+  transition: all var(--transition-normal);
+}
+
+.menu-icon.open span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.menu-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
 }
 
 .nav ul {
@@ -40,10 +80,58 @@
   border-radius: 2px;
 }
 
-.nav a:hover {
+.nav a:hover,
+.nav a:active {
   color: var(--text-primary);
 }
 
-.nav a:hover::after {
+.nav a:hover::after,
+.nav a:active::after {
   width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .header.glass-nav {
+    padding: 1rem 1.5rem;
+  }
+  
+  .header-container {
+    justify-content: flex-end; /* Push hamburger to right */
+  }
+  
+  .menu-icon {
+    display: flex;
+  }
+  
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 60%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: right var(--transition-normal);
+    z-index: 1000;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+    border-left: var(--glass-border);
+  }
+  
+  .nav.nav-active {
+    right: 0;
+  }
+  
+  .nav ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 3rem;
+  }
+  
+  .nav a {
+    font-size: 1.5rem;
+  }
 }

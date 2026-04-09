@@ -171,3 +171,38 @@
     gap: 3rem;
   }
 }
+
+@media (max-width: 768px) {
+  .about-main-column, .about-side-column {
+    gap: 1.5rem;
+  }
+  
+  .about h3 {
+    font-size: 1.5rem;
+  }
+  
+  .about-skills {
+    padding: 1.5rem;
+  }
+  
+  .skill-pill {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline {
+    padding-left: 1rem;
+  }
+  
+  .timeline-dot {
+    left: -1.35rem;
+    width: 0.70rem;
+    height: 0.70rem;
+  }
+  
+  .timeline-content h4 {
+    font-size: 1.15rem;
+  }
+}

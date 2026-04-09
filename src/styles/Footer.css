@@ -104,3 +104,17 @@
     gap: 2rem;
   }
 }
+
+@media (max-width: 480px) {
+  .footer {
+    padding-top: 3rem;
+  }
+  
+  .footer-content {
+    gap: 1.5rem;
+  }
+  
+  .footer-tagline {
+    font-size: 0.85rem;
+  }
+}

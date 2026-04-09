@@ -118,3 +118,18 @@
     gap: 3rem;
   }
 }
+
+@media (max-width: 480px) {
+  .contact-wrapper {
+    padding: 1.5rem;
+    gap: 2rem;
+  }
+  
+  .contact-info h3 {
+    font-size: 1.5rem;
+  }
+  
+  .detail-value {
+    font-size: 1.1rem;
+  }
+}
